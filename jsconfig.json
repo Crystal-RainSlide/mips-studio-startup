@@ -19,6 +19,7 @@
   "exclude": [
     "dist_electron/win-unpacked",
     "dist_electron/linux-unpacked",
-    "resources/vscodium"
+    "dist_electron/VSCodium",
+    "dist_electron/vscodium"
   ]
 }

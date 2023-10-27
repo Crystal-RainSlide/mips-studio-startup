@@ -4,22 +4,37 @@ import { dialog } from '@electron/remote';
 import fse from 'fs-extra';
 import Seven from 'node-7z';
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+const isAppImage = Object.hasOwn(process.env, "APPIMAGE");
+
+const cwd = process.cwd();
+
 // Path of the resources dir of Electron, contains .asar file, VSCodium, startup json
 const resourcesPath = (
-  process.env.NODE_ENV === 'development'
-    ? path.join(process.cwd(), 'resources')
-    : process.resourcesPath // process.resourcesPath should be more robust in non-development
+  isDevelopment
+    ? path.join(cwd, 'resources')
+    : process.resourcesPath
 );
 
-// Use codium.cmd for win32
-// TODO: Support external VSC?
+// installPath contains the .AppImage file, or the startup program dir
+// We assume VSCodium's program dir is also there & is not AppImage
+const installPath = (
+  isDevelopment
+  ? path.join(cwd, 'dist_electron')
+  : isAppImage
+    ? cwd
+    : path.join(cwd, '..')
+);
+
+// Use VSCodium and codium.cmd for win32
+const codiumDir = process.platform === 'win32' ? 'VSCodium' : 'vscodium';
 const codium = process.platform === 'win32' ? 'codium.cmd' : 'codium';
 
 const paths = {
   resources: resourcesPath,
   startupJson:   path.join(resourcesPath, 'mips-studio-startup-json.json'),
-  VSC:           path.join(resourcesPath, 'vscodium', 'bin', codium),
   eideTemplates: path.join(resourcesPath, 'eide-templates'),
+  VSC:           path.join(installPath, codiumDir, 'bin', codium),
 };
 
 // Freeze & check paths
@@ -34,7 +49,7 @@ for (const [key, value] of Object.entries(paths)) {
 const readStartupJson = () => fse.readJsonSync(paths.startupJson, { encoding: 'utf8' });
 
 /** When getting only one dir from dialog.showOpenDialogSync(),
- * return dir | undefined, instead of [dir] | undefined.
+ * return '<dir>' or undefined, instead of ['<dir>'] or undefined.
  * @returns {string | undefined} */
 const newFolderDialog = () => {
   const dirs = dialog.showOpenDialogSync({ properties: ['openDirectory'] });
