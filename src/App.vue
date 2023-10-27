@@ -30,7 +30,6 @@ body {
 .footer {
   font-weight: 400;
   font-size: 16px;
-  line-height: 23px;
   margin-top: 30px;
 }
 

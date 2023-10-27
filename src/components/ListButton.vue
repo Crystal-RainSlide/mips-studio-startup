@@ -7,25 +7,24 @@
 
 <style scoped>
 .button {
-  font-size: 24px;
-  line-height: 35px;
-  width: 360px;
-  height: 48px;
-  background: #EDE8EF;
-  border: none;
-  text-align: justify;
   display: flex;
   flex-flow: column;
+  width: 360px;
+  height: 48px;
+  padding: 10px 12px;
+  background: #EDE8EF;
+  border: none;
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: justify;
 }
 
-.button .button-title {
-  padding-left: 13px;
-  padding-top: 12px;
+.button-title {
+  font-weight: 600;
 }
 
 .button-subtitle {
-  padding-left: 13px;
-  padding-bottom: 12px;
+  font-size: 18px;
 }
 
 .button_active {

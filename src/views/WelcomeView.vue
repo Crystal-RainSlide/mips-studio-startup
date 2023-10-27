@@ -119,21 +119,6 @@ export default {
   text-decoration: underline;
 }
 
-.title {
-  font-size: 48px;
-  color: #705697;
-  margin: 0;
-  line-height: 40px;
-}
-
-.subtitle {
-  font-size: 16px;
-  line-height: 23px;
-  margin: 0;
-  font-style: normal;
-  font-weight: 400;
-}
-
 .main-subtitle {
   margin-bottom: 16px;
   line-height: 23px;
@@ -147,22 +132,21 @@ export default {
 .startup {
   display: flex;
   flex-flow: column;
-  column-gap: 14px;
 }
 
 .startup .button {
-  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
   width: 276px;
   height: 48px;
+  margin: 0;
+  margin-bottom: 16px;
   background: #EDE8EF;
   border: none;
-  margin: 0;
   text-align: justify;
-  margin-bottom: 14px;
   font-size: 24px;
-  align-items: center;
-  display: flex;
-  column-gap: 15px;
+  line-height: 1;
 }
 
 .button:hover {

@@ -1,3 +1,5 @@
+<!-- TODO：把 ImportProject 和 NewProject 合成一个？ -->
+
 <template>
   <HeaderComponent title="导入项目向导" subtitle="MIPS Studio 探测到外部项目，需对项目的一些参数进行初始化方可导入项目。
 请选择您的项目针对的设备，如果您的设备未在下述列表中，请选择“自定义...”。" cn=true />
@@ -39,7 +41,7 @@
           <a>{{ deviceList[selection].template.template_type[0].name }}</a>
         </div>
       </div>
-      <a class="adjust-arg">调整参数</a>
+      <a class="adjust-arg" title="敬请期待…">调整参数</a>
     </div>
   </div>
   <div class="project-path">
@@ -100,6 +102,7 @@ export default {
 }
 
 .desc .desctitle {
+  min-width: 5em;
   font-weight: bold;
 }
 
@@ -116,13 +119,6 @@ li {
   color: #705697;
 }
 
-.directory {
-  width: 514px;
-  height: 36px;
-  background-color: #D6CFE2;
-  border: none;
-}
-
 .bar {
   display: flex;
   flex-flow: row;
@@ -130,8 +126,15 @@ li {
 }
 
 .bar-folder {
-  display: flex;
-  flex-flow: row;
+  flex-grow: 1;
+}
+
+.directory {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border: none;
+  background-color: #D6CFE2;
 }
 
 .bar-button-continue {
