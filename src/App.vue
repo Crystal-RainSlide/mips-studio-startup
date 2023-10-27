@@ -44,6 +44,15 @@ body {
   margin: 32px;
   row-gap: 32px;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
 </style>
 
 <script>

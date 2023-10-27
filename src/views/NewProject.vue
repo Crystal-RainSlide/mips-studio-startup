@@ -122,11 +122,9 @@ export default {
 }
 
 ul {
-  padding: 0;
   display: flex;
   flex-flow: column;
   row-gap: 10px;
-  margin: 0;
 }
 
 li {

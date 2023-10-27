@@ -176,15 +176,13 @@ export default {
   min-width: 310px;
 }
 
-.history>ul {
-  margin: 0;
+.history > ul {
   display: flex;
   flex-flow: column;
   margin-left: 20px;
-  padding: 0;
 }
 
-li {
+.history > ul > li {
   padding-left: 12px;
   list-style: "⯈";
   font-size: 14px;
