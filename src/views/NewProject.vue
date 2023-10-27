@@ -82,34 +82,20 @@ export default {
 </script>
 
 <style scoped>
-.device {
+.main {
+  display: flex;
+  column-gap: 80px;
+}
+
+.device, .device ul,
+.config, .config .desc {
   display: flex;
   flex-flow: column;
   row-gap: 10px;
-}
-
-.main-subtitle {
-  display: flex;
-  flex-flow: column;
-}
-
-.main {
-  display: flex;
-  column-gap: 105px;
-  column-count: 2;
 }
 
 .config {
-  display: flex;
-  flex-flow: column;
-  row-gap: 10px;
-  min-width: 310px;
-}
-
-.config .desc {
-  display: flex;
-  flex-flow: column;
-  row-gap: 10px;
+  min-width: 275px;
 }
 
 .desc .desctitle {
@@ -119,12 +105,6 @@ export default {
 .desc-container {
   display: flex;
   column-gap: 15px;
-}
-
-ul {
-  display: flex;
-  flex-flow: column;
-  row-gap: 10px;
 }
 
 li {

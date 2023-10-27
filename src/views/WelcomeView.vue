@@ -141,8 +141,7 @@ export default {
 
 .main {
   display: flex;
-  column-gap: 105px;
-  column-count: 2;
+  column-gap: 80px;
 }
 
 .startup {

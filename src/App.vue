@@ -41,7 +41,7 @@ body {
 .container {
   display: flex;
   flex-flow: column;
-  margin: 32px;
+  padding: 32px;
   row-gap: 32px;
 }
 

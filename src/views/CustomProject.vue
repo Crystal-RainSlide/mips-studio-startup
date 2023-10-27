@@ -62,7 +62,7 @@ export default {
 .main {
   display: flex;
   flex-flow: row;
-  column-gap: 105px;
+  column-gap: 80px;
 }
 
 .left {
